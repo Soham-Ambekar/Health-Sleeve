@@ -1,0 +1,104 @@
+#include <Wire.h>
+#include "MAX30100_PulseOximeter.h"
+#include <TinyGPS++.h>
+#include <SoftwareSerial.h>
+SoftwareSerial tx(2, 3);
+SoftwareSerial gpsSerial(4, 5);
+TinyGPSPlus gps;
+
+String temp, pulse, oxy, la, lo, data;
+int i;
+#define REPORTING_PERIOD_MS 5000
+PulseOximeter pox;
+uint32_t tsLastReport = 0, pre;
+
+void onBeatDetected()
+{
+  Serial.println("Beat!");
+}
+
+void setup()
+{
+  Serial.begin(9600);
+  tx.begin(9600);
+  gpsSerial.begin(9600);
+  pinMode(6, INPUT_PULLUP);
+  if (!pox.begin()) {
+    Serial.println("pulse sensor FAILED");
+    for (;;);
+  } else {
+    Serial.println("pulse sensor SUCCESS");
+  }
+  pox.setIRLedCurrent(MAX30100_LED_CURR_7_6MA);
+  //  pox.setOnBeatDetectedCallback(onBeatDetected);
+}
+
+void loop()
+{
+
+
+  pox.update();
+
+
+  if (gpsSerial.available() > 0)
+  {
+
+    if (gps.encode(gpsSerial.read()))
+    {
+      displayInfo();
+    }
+  }
+
+  if (!digitalRead(6) and (millis() - pre) > 10000)
+  {
+    pox.update();
+    data = "u" + temp + "," + pulse + "," + oxy + "," + la + "," + lo;
+    Serial.println(data);
+    delay(100);
+    tx.println("");
+    tx.println(data);
+  }
+
+
+
+  if (millis() - tsLastReport > REPORTING_PERIOD_MS) {
+    pox.update();
+    pulse = String(int(pox.getHeartRate()));
+    //    Serial.print(pulse);
+    //    Serial.print("bpm / SpO2:");
+    oxy = String(pox.getSpO2());
+    //    Serial.print(oxy);
+    //    Serial.println("%");
+    data = "s" + temp + "," + pulse + "," + oxy;
+    Serial.println(data);
+    delay(100);
+   for(i = 0; i<=data.length(); i++)
+   {
+      
+      if(i == data.length())
+      {
+        data[i] = '\0';
+      }
+        tx.write(data[i]);
+   }
+    tsLastReport = millis();
+
+  }
+
+
+}
+
+
+void displayInfo()
+{
+  if (gps.location.isValid())
+  {
+    la = String(gps.location.lat(), 6);
+    lo = String(gps.location.lng(), 6);
+  }
+  else
+  {
+    Serial.println("no location");
+  }
+
+}
