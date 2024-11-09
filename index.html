@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Sleeve</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Health Sleeve</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://thingspeak.mathworks.com/channels/2580628/shared_view">Monitor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="2.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                   
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="1.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="3.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+   
+
+    <!-- Monitor Section -->
+    <section class="container mt-5">
+        <h2 class="mb-4">Monitor</h2>
+        <p>
+            Real-time tracking of health metrics like heart rate, oxygen levels, and body temperature provides an immediate, dynamic view of a person’s well-being. Using sensors in wearable devices or dedicated health monitoring equipment, individuals can keep a close eye on vital signs. Heart rate monitoring helps detect irregularities and track cardiovascular health, while oxygen level (SpO₂) tracking can indicate respiratory health, ensuring adequate oxygenation. Temperature monitoring adds another layer of insight, especially useful for early fever detection or identifying potential health issues. Together, these metrics enable a comprehensive, real-time health assessment, empowering users and healthcare providers with actionable insights for timely intervention.
+        </p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="temp.png" class="card-img-top" alt="Monitor Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Body Temperature</h5>
+                        <p class="card-text">Body temperature monitoring helps detect early signs of infection or illness, offering a quick indication of potential health issues.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="rate.png" class="card-img-top" alt="Monitor Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Heart Rate</h5>
+                        <p class="card-text">Heart rate monitoring tracks cardiovascular health by measuring beats per minute, helping to identify stress levels, fitness progress.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="oxy.png" class="card-img-top" alt="Monitor Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Oxygen (SpO2)</h5>
+                        <p class="card-text">Oxygen (SpO₂) monitoring measures blood oxygen saturation, providing insights into respiratory health and ensuring adequate oxygen levels in the body.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accordion -->
+    <div class="container mt-5">
+        <h2 class="mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Question 1: What is body temperature monitoring, and why is it important?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Body temperature</strong> monitoring helps detect early signs of infections or illness by measuring core temperature. A sudden increase can indicate a fever or underlying health issue, allowing for quick intervention.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Question 2: What is SpO₂, and why should I monitor my oxygen levels?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                       <strong> SpO₂</strong> measures blood oxygen saturation, indicating how well oxygen is being transported to body cells. Monitoring SpO₂ is especially important for respiratory health, as low levels can signal issues with lung function or oxygen supply.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Question 3: How can real-time health monitoring improve my well-being?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Real-time </strong>health monitoring provides immediate insights, helping you track vital signs and detect early warning signs. This proactive approach can aid in managing chronic conditions, optimizing fitness, and promoting timely healthcare interventions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- About Us Section -->
+     <section class="container mt-5" id="aboutus">
+        <h2 class="mb-4">About Us</h2>
+        <p>
+            Hello, I'm Soham Ambekar, the creator of this website. I developed this platform with a vision to integrate Internet of Things (IoT) technology with shoe monitoring to revolutionize the way we track and manage our health and fitness. As an advocate for technological innovation in everyday life, I wanted to create a seamless solution that combines wearable technology with IoT to monitor vital health metrics like heart rate, oxygen levels, and body temperature.
+        </p>
+        <p>
+            I'm passionate about merging technology with daily life, and I believe this platform can help individuals live healthier, more informed lives. Thank you for visiting, and I hope you enjoy exploring the innovative possibilities of IoT-enabled health monitoring
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">Build by Soham 💖</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
