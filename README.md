@@ -18,11 +18,15 @@
 - **Cloud Platform**: ThingSpeak for data logging and real-time visualization.
 - **Web Technologies**: HTML, CSS, JavaScript, Bootstrap (for creating the user interface).
 
+![img](https://github.com/user-attachments/assets/333f2e67-5833-427e-9f77-64a9541c04d5)
+![immmg](https://github.com/user-attachments/assets/e8bbd4a0-a5e9-4595-ac78-a2609143cf1b)
+ ![op](https://github.com/user-attachments/assets/2e380f6a-2df9-455e-90eb-eaca2e335e81)
+
 ## Project Components
 
 1. **Health Sleeve**:
    - A wearable sleeve equipped with sensors to monitor heart rate, pulse, and oxygen levels.
-   
+  
 2. **Microcontroller**:
    - The microcontroller processes sensor data and transmits it to ThingSpeak via Wi-Fi.
 
@@ -63,9 +67,7 @@
 ### Dependencies
 
 - **Arduino IDE**: For programming the microcontroller.
-- **ThingSpeak API**: For sending and receiving data.
 - **Bootstrap**: For the responsive website layout.
-- **JavaScript (AJAX)**: To fetch real-time data from ThingSpeak.
 
 ## Usage
 
@@ -96,6 +98,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to the ThingSpeak platform for providing an easy-to-use cloud service for IoT projects.
 - Special thanks to Bootstrap for providing an open-source framework for the website interface.
 
----
-
-Feel free to modify this according to your exact needs!
